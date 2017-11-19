@@ -7,21 +7,37 @@
         <div id="app"></div>
 
 
-         <script type="text/babel">
-          class Greeting extends React.Component {
+        <script type="text/babel">
+          class FaveSong extends React.Component {
+
+            constructor(props) {
+              super(props);
+              this.state = {
+                albumNumber: 3
+              }
+            }
+
             render() {
               return(
                 <div>
-                  <h1>Hello {this.props.name}!</h1>
+                  <h2>My Favorite Song is: '{this.props.song}' on {this.props.album}</h2>
+                  <p><i>By: {this.props.name}</i></p>
+                  <h3>Album number: {this.state.albumNumber}</h3>
                 </div>
               );
             }
           }
 
+          FaveSong.defaultProps = {
+            album: "Graduation",
+            name: "Kanye West"
+          }
+
           ReactDOM.render(
-            <Greeting name="Bloc Student"/>, document.getElementById('app')
+            <FaveSong song="Can't Tell Me Nothin'" />, document.getElementById('app')
           );
          </script>
+
 
          <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
