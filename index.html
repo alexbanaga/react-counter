@@ -8,18 +8,18 @@
 
 
          <script type="text/babel">
-          class FaveSong extends React.Component {
+          class Greeting extends React.Component {
             render() {
               return(
                 <div>
-                  <h2>My Favorite Song is: {this.props.song}</h2>
+                  <h1>Hello {this.props.name}!</h1>
                 </div>
               );
             }
           }
 
           ReactDOM.render(
-            <FaveSong song="Can't Tell Me Nothin'" />, document.getElementById('app')
+            <Greeting name="Bloc Student"/>, document.getElementById('app')
           );
          </script>
 
